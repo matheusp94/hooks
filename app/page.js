@@ -4,16 +4,18 @@ import PrintMessage from './components/PrintMessage';
 import { useState } from 'react';
 
 export default function Home() {
-  const [state, setStage] = useState('matheus');
+  const [name, setName] = useState('')
 
-  function changeName() {
-    setStage('Outro Nome')
+  function changeName(e) {
+    const value = e.target.value;
+    setName(value)
+
   }
 
   return (
     <main>
-      <button onClick={changeName}>Trocar</button>
-      <PrintMessage name={state}/>
+      <input type="text" value={name} onChange={changeName} />
+      <PrintMessage name={name}/>
     </main> 
   )
 }
