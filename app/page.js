@@ -4,13 +4,16 @@ import PrintMessage from './components/PrintMessage';
 import { useState } from 'react';
 
 export default function Home() {
-  const state = useState();
-  console.log('State = ', state)
+  const [state, setStage] = useState('matheus');
 
-  const name = "FIAP";
+  function changeName() {
+    setStage('Outro Nome')
+  }
+
   return (
     <main>
-      <PrintMessage name={name}/>
+      <button onClick={changeName}>Trocar</button>
+      <PrintMessage name={state}/>
     </main> 
   )
 }
