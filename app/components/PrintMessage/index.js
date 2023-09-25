@@ -1,7 +1,7 @@
 import React from 'react';
 
-const PrintMessage = ()=>{
-    return <h1>Meu nome é</h1>
+const PrintMessage = (props) => {
+    return <h1>Meu nome é{props.name}</h1>
 }
 
 export default PrintMessage
